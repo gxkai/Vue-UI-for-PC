@@ -4,6 +4,8 @@
 set -e
 
 # 生成静态文件
+rm -rf dist
+
 npm run buildDocs
 
 npm run build
