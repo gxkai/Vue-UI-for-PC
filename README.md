@@ -98,3 +98,6 @@ npm run buildComponents
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+# 
+git subtree push --prefix dist origin gh-pages
