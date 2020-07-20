@@ -9,7 +9,7 @@
     "buildDocs": "vue-cli-service build",
     "buildComponents": "vue-cli-service build --target lib --name ak packages/index.js",
     "lint": "vue-cli-service lint",
-    "publish": "git checkout gh-pages && git add -f dist && git commit -m 'test' && git subtree push --prefix dist origin gh-pages"
+    "publish": "git checkout gh-pages && git add -f dist && git commit -m 'test' && git subtree push --prefix dist origin gh-pages && git checkout master"
   },
   "dependencies": {
     "axios": "^0.19.0",
