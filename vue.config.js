@@ -58,15 +58,17 @@ fs.access(pathIcons, (err) => {
   })
 })
 
-let publicPath = '/'
+let publicPath = '/Vue-UI-for-PC/'
+let distName = 'web'
 // 打包组件示例时使用相对路径
 if (original === 'buildDocs') {
-  publicPath = './'
+  publicPath = '/Vue-UI-for-PC/'
+  distName = 'docs'
 }
 module.exports = {
   publicPath: publicPath,
   assetsDir: 'static',
-  outputDir: 'dist-' + original,
+  outputDir: 'dist/' + distName ,
   productionSourceMap: false,
   lintOnSave: !NODE_ENV,
   pages: {
@@ -126,20 +128,20 @@ module.exports = {
       }
       if (original !== 'buildDocs') {
         // 打包示例时不移除console.log
-        plugins.push(
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              warnings: false,
-              compress: {
-                drop_console: true, // console
-                drop_debugger: false,
-                pure_funcs: ['console.log'] // 移除console
-              }
-            },
-            sourceMap: false,
-            parallel: true
-          })
-        )
+        // plugins.push(
+        //   new UglifyJsPlugin({
+        //     uglifyOptions: {
+        //       warnings: false,
+        //       compress: {
+        //         drop_console: true, // console
+        //         drop_debugger: false,
+        //         pure_funcs: ['console.log'] // 移除console
+        //       }
+        //     },
+        //     sourceMap: false,
+        //     parallel: true
+        //   })
+        // )
       }
     } else {
       // 为开发环境修改配置...
