@@ -58,13 +58,14 @@ fs.access(pathIcons, (err) => {
   })
 })
 
+let publicPath = '/Vue-UI-for-PC/'
 let distName = 'web'
 // 打包组件示例时使用相对路径
 if (original === 'buildDocs') {
   distName = 'docs'
 }
 module.exports = {
-  publicPath: '/Vue-UI-for-PC/' + distName,
+  publicPath: publicPath + distName + '/',
   assetsDir: 'static',
   outputDir: 'dist/' + distName ,
   productionSourceMap: false,
